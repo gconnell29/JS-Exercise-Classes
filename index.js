@@ -48,15 +48,18 @@ class Person {
     this.stomach = [];
   }
   eat(somefood) {
-    if (this.stomach.length < 9) {
+    if (this.stomach.length <= 9) {
       this.stomach.push(somefood);
     }
   } // close eat method
   poop() {
-    this.stomach.array.forEach(element => {
-      this.stomach.pop(element);
-    });
+    while (this.stomach.length !== 0) {
+      this.stomach.pop();
+    }
   } // close poop method
+  toString() {
+    return `${this.name}, ${this.age}`
+  }
 } // close person class
   
   /*
@@ -125,8 +128,13 @@ class Car {
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
- class Instructor {
-
+ class Instructor extends Lambdasian {
+   constructor(lamstructor) {
+     super(lamstructor);
+     this.specialty = 'algorithms';
+     this.favLanguage = 'javascript';
+     this.catchPhrase = 'Keep it 100';
+   }
  }
   /*
     TASK 5
