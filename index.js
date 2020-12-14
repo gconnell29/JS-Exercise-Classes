@@ -41,9 +41,23 @@ class Airplane {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- class Person {
-    
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
   }
+  eat(somefood) {
+    if (this.stomach.length < 9) {
+      this.stomach.push(somefood);
+    }
+  } // close eat method
+  poop() {
+    this.stomach.array.forEach(element => {
+      this.stomach.pop(element);
+    });
+  } // close poop method
+} // close person class
   
   /*
     TASK 2
@@ -59,9 +73,20 @@ class Airplane {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- class Car {
-    
+class Car {
+  constructor(model, milesPerGallon) {
+    this.tank = 0;
+    this.odometer = 0;
+  } // close constructor
+  fill(gallons) {
+    this.tank += gallons;
   }
+  drive(distance) {
+    this.odometer += distance;
+    this.tank = this.tank - (milesPerGallon/distance);
+    return `I ran out of fuel at ${this.odometer} miles!`
+  }
+} // close person class
   
   /*
     TASK 3
@@ -76,7 +101,14 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+    constructor(nal) {
+      this.name = nal.name;
+      this.age = nal.age;
+      this.location = nal.location;
+    }
+    speak() {
+      return `Hello my name is ${this.name}, I am from ${this.location}`
+    }
   }
   
   /*
